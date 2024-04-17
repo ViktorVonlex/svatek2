@@ -1,0 +1,56 @@
+Phase: ChocolateChipCookiesGrammar
+Input: Token
+
+Rule: ThisIsSentence
+Priority: 100
+(
+  {Token.string == "This"} 
+  {Token.string == "is"}
+  {Token.category == "SENT_START"}
+):thisIsSentence
+--> :thisIsSentence.ThisIsSentence = {kind = "sentence"}
+
+Rule: LongTokens
+Priority: 90
+(
+  {Token.length > 5}
+):longTokens
+--> :longTokens.LongTokens = {kind = "long"}
+
+Rule: NounTokens
+Priority: 80
+(
+  {Token.category == "NN"}
+  {Token.category == "NNP"}
+):nounTokens
+--> :nounTokens.NounTokens = {kind = "noun"}
+
+Rule: ChocolateChipTokens
+Priority: 70
+(
+  {Token.string =~ "[Cc]hocolate"}
+  {Token.string =~ "[Cc]hip"}
+):chocolateChipTokens
+--> :chocolateChipTokens.ChocolateChipTokens = {kind = "chocolate_chip"}
+
+Rule: CookieTokens
+Priority: 60
+(
+  {Token.string =~"[Cc]ookie"}
+):cookieTokens
+--> :cookieTokens.CookieTokens = {kind = "cookie"}
+
+Rule: NoChillingPhrase
+Priority: 50
+(
+  ({Token.string =~ "[Nn]o"} | {Token.string =~ "[Nn]ot"})?
+  {Token.string =~ "[Cc]hilling"}
+):noChillingPhrase
+--> :noChillingPhrase.NoChillingPhrase = {kind = "no_chilling"}
+
+Rule: MeasurementUnit
+Priority: 110
+(
+    {Token.string =~ "(?m)[\\d½¾¼]+\\s((?:cups?)|(?:teaspoons?)|(?:tablespoons?)|(?:m?l)|(?:k?g)|(?:oz)|(?:ounces?))"}
+):measurementTokens
+--> :measurementTokens.MeasurementUnit = {kind = "measurement_unit"}
