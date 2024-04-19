@@ -1,14 +1,12 @@
 Phase: ChocolateChipCookiesGrammar
 Input: Token
 
-Rule: ThisIsSentence
+Rule: Sentence
 Priority: 100
 (
-  {Token.string == "This"} 
-  {Token.string == "is"}
   {Token.category == "SENT_START"}
-):thisIsSentence
---> :thisIsSentence.ThisIsSentence = {kind = "sentence"}
+):sentence
+--> :sentence.Sentence = {kind = "sentence"}
 
 Rule: LongTokens
 Priority: 90
@@ -20,7 +18,7 @@ Priority: 90
 Rule: NounTokens
 Priority: 80
 (
-  {Token.category == "NN"}
+  {Token.category == "NN"} |
   {Token.category == "NNP"}
 ):nounTokens
 --> :nounTokens.NounTokens = {kind = "noun"}

@@ -14,7 +14,7 @@
       <docList>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>test1.txt_000B3</resourceName>
+          <resourceName>test1.txt_0000F</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
@@ -33,7 +33,7 @@
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>test2.txt_000B4</resourceName>
+          <resourceName>test2.txt_00010</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
@@ -52,7 +52,7 @@
         </gate.util.persistence.LRPersistence>
       </docList>
       <resourceType>gate.corpora.CorpusImpl</resourceType>
-      <resourceName>test</resourceName>
+      <resourceName>dunno</resourceName>
       <initParams class="gate.util.persistence.MapPersistence">
         <mapType>gate.util.SimpleFeatureMapImpl</mapType>
         <localMap/>
@@ -65,8 +65,8 @@
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap/>
           </runtimeParams>
-          <resourceType>gate.creole.annotdelete.AnnotationDeletePR</resourceType>
-          <resourceName>Document Reset PR 00020</resourceName>
+          <resourceType>gate.creole.tokeniser.DefaultTokeniser</resourceType>
+          <resourceName>ANNIE English Tokeniser 00011</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap/>
@@ -97,22 +97,6 @@
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap/>
           </runtimeParams>
-          <resourceType>gate.creole.tokeniser.DefaultTokeniser</resourceType>
-          <resourceName>ANNIE English Tokeniser 00011</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
-          </initParams>
-          <features class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
-          </features>
-        </gate.util.persistence.LanguageAnalyserPersistence>
-        <gate.util.persistence.LanguageAnalyserPersistence>
-          <runtimeParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
-          </runtimeParams>
           <resourceType>gate.creole.POSTagger</resourceType>
           <resourceName>ANNIE POS Tagger 00018</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
@@ -127,10 +111,31 @@
         <gate.util.persistence.LanguageAnalyserPersistence>
           <runtimeParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+            <localMap>
+              <entry>
+                <string>resolveIt</string>
+                <boolean>true</boolean>
+              </entry>
+            </localMap>
+          </runtimeParams>
+          <resourceType>gate.creole.coref.Coreferencer</resourceType>
+          <resourceName>ANNIE Pronominal Coreferencer 00019</resourceName>
+          <initParams class="gate.util.persistence.MapPersistence">
+            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+            <localMap/>
+          </initParams>
+          <features class="gate.util.persistence.MapPersistence">
+            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+            <localMap/>
+          </features>
+        </gate.util.persistence.LanguageAnalyserPersistence>
+        <gate.util.persistence.LanguageAnalyserPersistence>
+          <runtimeParams class="gate.util.persistence.MapPersistence">
+            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap/>
           </runtimeParams>
-          <resourceType>gate.creole.gazetteer.DefaultGazetteer</resourceType>
-          <resourceName>ANNIE Gazetteer 00014</resourceName>
+          <resourceType>gate.creole.annotdelete.AnnotationDeletePR</resourceType>
+          <resourceName>Document Reset PR 00020</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap/>
@@ -175,15 +180,10 @@
         <gate.util.persistence.LanguageAnalyserPersistence>
           <runtimeParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>resolveIt</string>
-                <boolean>true</boolean>
-              </entry>
-            </localMap>
+            <localMap/>
           </runtimeParams>
-          <resourceType>gate.creole.coref.Coreferencer</resourceType>
-          <resourceName>ANNIE Pronominal Coreferencer 00019</resourceName>
+          <resourceType>gate.creole.gazetteer.DefaultGazetteer</resourceType>
+          <resourceName>ANNIE Gazetteer 00014</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap/>
@@ -199,14 +199,14 @@
             <localMap/>
           </runtimeParams>
           <resourceType>gate.creole.Transducer</resourceType>
-          <resourceName>JAPE Transducer 00109</resourceName>
+          <resourceName>JAPE Transducer 00015</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
                 <string>grammarURL</string>
                 <gate.util.persistence.PersistenceManager-RRPersistence>
-                  <uriString>$relpath$../ukol.jape</uriString>
+                  <uriString>$relpath$ukol.jape</uriString>
                 </gate.util.persistence.PersistenceManager-RRPersistence>
               </entry>
             </localMap>
