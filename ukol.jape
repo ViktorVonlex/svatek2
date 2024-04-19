@@ -38,13 +38,13 @@ Priority: 60
 ):cookieTokens
 --> :cookieTokens.CookieTokens = {kind = "cookie"}
 
-Rule: NoChillingPhrase
+Rule: NoChillingPhase
 Priority: 50
 (
   ({Token.string =~ "[Nn]o"} | {Token.string =~ "[Nn]ot"})?
   {Token.string =~ "[Cc]hilling"}
-):noChillingPhrase
---> :noChillingPhrase.NoChillingPhrase = {kind = "no_chilling"}
+):noChillingPhase
+--> :noChillingPhase.NoChillingPhase = {kind = "no_chilling"}
 
 Rule: MeasurementUnit
 Priority: 110
